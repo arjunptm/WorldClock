@@ -6,12 +6,12 @@ class WeatherApp extends React.Component {
       cities: {
         'Raleigh': {
           weatherId: 4487042,
-          timeZone: 'America/Los_Angeles'
+          timeZone: 'America/New_York'
         },
 
         'Bangalore': {
           weatherId: 1277333,
-          timeZone: 'America/Toronto'
+          timeZone: 'India/Delhi'
         },
 
         'Paris': {
