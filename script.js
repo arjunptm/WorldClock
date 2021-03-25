@@ -72,7 +72,7 @@ class City extends React.Component {
 
     this.getWeatherInfo = this.getWeatherInfo.bind(this);
     this.updateCurrentTime = this.updateCurrentTime.bind(this);
-    this.toggleOpen = this.toggleOpen.bind(this);
+    // this.toggleOpen = this.toggleOpen.bind(this);
   }
   async getWeatherInfo(id) {
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&appid=c5baa00af2bfbc51b5a8bff68a069bb0`).then(res => res.json());

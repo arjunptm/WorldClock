@@ -11,6 +11,7 @@ html {
 
 body {
   margin: 0;
+  background: #000000;
 }
 
 h2 {
@@ -68,40 +69,40 @@ p {
 }
 
 .dawn {
-  background: linear-gradient(#123352, #1d5372, #3885a2);
+  background: linear-gradient(#1233521F, #1d53721F, #3885a21F);
 }
 
 .morning {
-  background: linear-gradient(#8dcdba, #eee07a, #f0eebc);
+  background: linear-gradient(#8dcdba1F, #eee07a1F, #f0eebc1F);
   color: #363c80;
 }
 
 .afternoon-1 {
-  background: linear-gradient(#f0eebc, #e6756f, #ee8049);
+  background: linear-gradient(#f0eebc1F, #e6756f1F, #ee80491F);
   color: #fff;
 }
 
 .afternoon-2 {
-  background: linear-gradient(#ee8049, #facf62, #e6756f);
+  background: linear-gradient(#ee80491F, #facf621F, #e6756f1F);
   color: #fff;
 }
 
 .evening-1 {
-  background: linear-gradient(#facf62, #e6756f, #884186);
+  background: linear-gradient(#facf621F, #e6756f1F, #8841861F);
   color: #fff;
 }
 
 .evening-2 {
-  background: linear-gradient(#291c6b, #4a257d, #884186);
+  background: linear-gradient(#291c6b1F, #4a257d1F, #8841861F);
   color: #9eaf81;
 }
 
 .night-1 {
-  background: linear-gradient(#884186, #111642, #011548);
+  background: linear-gradient(#8841861F, #1116421F, #0115481F);
 }
 
 .night-2 {
-  background: linear-gradient(#111642, #1d5372, #123352);
+  background: linear-gradient(#1116421F, #1d53721F, #1233521F);
 }
 
 .weather-icon i {
