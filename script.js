@@ -81,7 +81,8 @@ class City extends React.Component {
       icon: `icon-${res.weather[0].icon}`,
       timeZ: res.timeZone
     };
-
+    
+    console.log(timeZ);
     this.setState({
       weatherData: weatherInfo
     });
