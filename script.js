@@ -9,6 +9,11 @@ class WeatherApp extends React.Component {
           timeZone: 'Antartica/Palmer' //Using a timezone one hour ahead to compensate daylight saving. Change in 6 months if still using.
         },
 
+        'Santa Clara': {
+          weatherId: 5393015,
+          timeZone: 'America/Denver' //Using a timezone one hour ahead to compensate daylight saving. Change in 6 months if still using.
+        },
+
         'Bangalore': {
           weatherId: 1277333,
           timeZone: 'Asia/Kolkata'
@@ -17,12 +22,8 @@ class WeatherApp extends React.Component {
         'Seoul': {
           weatherId: 1835848,
           timeZone: 'Asia/Seoul'
-        },
-
-        'Santa Clara': {
-          weatherId: 5393015,
-          timeZone: 'America/Denver' //Using a timezone one hour ahead to compensate daylight saving. Change in 6 months if still using.
         }
+
       }
     };
   }
