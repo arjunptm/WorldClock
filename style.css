@@ -1,0 +1,150 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #CDD5C1;
+}
+
+body {
+  margin: 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 40px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-size: 20px;
+}
+
+.panel {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#123352, #1d5372, #3885a2);
+  border-right: 1px solid rgba(205, 213, 193, 0.3);
+  cursor: pointer;
+  transition: font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.3s;
+}
+.panel.open {
+  flex: 4;
+  font-size: 30px;
+}
+
+.panel > * {
+  flex: 1 0 auto;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s;
+}
+
+.panel > *:first-child {
+  justify-content: flex-end;
+}
+
+.panel > *:last-child {
+  justify-content: flex-start;
+}
+
+.dawn {
+  background: linear-gradient(#123352, #1d5372, #3885a2);
+}
+
+.morning {
+  background: linear-gradient(#8dcdba, #eee07a, #f0eebc);
+  color: #363c80;
+}
+
+.afternoon-1 {
+  background: linear-gradient(#f0eebc, #e6756f, #ee8049);
+  color: #fff;
+}
+
+.afternoon-2 {
+  background: linear-gradient(#ee8049, #facf62, #e6756f);
+  color: #fff;
+}
+
+.evening-1 {
+  background: linear-gradient(#facf62, #e6756f, #884186);
+  color: #fff;
+}
+
+.evening-2 {
+  background: linear-gradient(#291c6b, #4a257d, #884186);
+  color: #9eaf81;
+}
+
+.night-1 {
+  background: linear-gradient(#884186, #111642, #011548);
+}
+
+.night-2 {
+  background: linear-gradient(#111642, #1d5372, #123352);
+}
+
+.weather-icon i {
+  font-family: "weathericons";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-size: 40px;
+  padding: 20px 0;
+}
+.weather-icon i.icon-01d:before {
+  content: "";
+}
+.weather-icon i.icon-01n:before {
+  content: "";
+}
+.weather-icon i.icon-02d:before {
+  content: "";
+}
+.weather-icon i.icon-02n:before {
+  content: "";
+}
+.weather-icon i.icon-03d:before, .weather-icon i.icon-03n:before {
+  content: "";
+}
+.weather-icon i.icon-04d:before, .weather-icon i.icon-04n:before {
+  content: "";
+}
+.weather-icon i.icon-09d:before, .weather-icon i.icon-09n:before {
+  content: "";
+}
+.weather-icon i.icon-10d:before {
+  content: "";
+}
+.weather-icon i.icon-10n:before {
+  content: "";
+}
+.weather-icon i.icon-11d:before, .weather-icon i.icon-11n:before {
+  content: "";
+}
+.weather-icon i.icon-13d:before, .weather-icon i.icon-13n:before {
+  content: "";
+}
+.weather-icon i.icon-50d:before, .weather-icon i.icon-50n:before {
+  content: "";
+}
