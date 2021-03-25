@@ -4,59 +4,70 @@ class WeatherApp extends React.Component {
     this.state = {
       currentTime: moment(),
       cities: {
-        'San Mateo': {
-          weatherId: 5391959,
-          timeZone: 'America/Los_Angeles' },
+        'Raleigh': {
+          weatherId: 4487042,
+          timeZone: 'America/Los_Angeles'
+        },
 
-        'Toronto': {
-          weatherId: 6167865,
-          timeZone: 'America/Toronto' },
+        'Bangalore': {
+          weatherId: 1277333,
+          timeZone: 'America/Toronto'
+        },
 
         'Paris': {
           weatherId: 2988507,
-          timeZone: 'Europe/Paris' },
+          timeZone: 'Europe/Paris'
+        },
 
         'Sydney': {
           weatherId: 2147714,
-          timeZone: 'Australia/Sydney' } } };
-
-
-
+          timeZone: 'Australia/Sydney'
+        }
+      }
+    };
   }
   componentDidMount() {
-    window.setInterval(() => this.setState({ currentTime: moment() }), 5000);
+    window.setInterval(() => this.setState({
+      currentTime: moment()
+    }), 5000);
   }
   render() {
-    const { cities, currentTime } = this.state;
-    return /*#__PURE__*/(
-      React.createElement("div", { className: "panels" },
+    const {
+      cities,
+      currentTime
+    } = this.state;
+    return /*#__PURE__*/ (
+      React.createElement("div", {
+          className: "panels"
+        },
 
-      Object.
-      keys(cities).
-      map((cityName) => /*#__PURE__*/
-      React.createElement(City, { name: cityName,
-        weatherId: cities[cityName].weatherId,
-        timeZone: cities[cityName].timeZone,
-        bgImg: cities[cityName].bgImg,
-        currentTime: currentTime,
-        key: cityName }))));
-
-
-
-
-  }}
+        Object.keys(cities).map((cityName) => /*#__PURE__*/
+          React.createElement(City, {
+            name: cityName,
+            weatherId: cities[cityName].weatherId,
+            timeZone: cities[cityName].timeZone,
+            bgImg: cities[cityName].bgImg,
+            currentTime: currentTime,
+            key: cityName
+          }))));
+  }
+}
 
 
 class City extends React.Component {
   constructor(props) {
     super(props);
-    const { timeZone, currentTime } = this.props;
+    const {
+      timeZone,
+      currentTime
+    } = this.props;
     this.state = {
       weatherData: {},
       localTime: currentTime.tz(timeZone).format('HH:mm dddd'),
       currentHour: currentTime.tz(timeZone).format('HH'),
       open: false,
-      bgGradient: '' };
+      bgGradient: ''
+    };
 
     this.getWeatherInfo = this.getWeatherInfo.bind(this);
     this.updateCurrentTime = this.updateCurrentTime.bind(this);
@@ -67,70 +78,114 @@ class City extends React.Component {
     const weatherInfo = {
       temp: res.main.temp,
       desc: res.weather[0].main,
-      icon: `icon-${res.weather[0].icon}` };
+      icon: `icon-${res.weather[0].icon}`,
+      timeZ: res.timeZone
+    };
 
     this.setState({
-      weatherData: weatherInfo });
+      weatherData: weatherInfo
+    });
 
   }
   setGradient(currentHour) {
     if (currentHour < 3) {
-      this.setState({ bgGradient: 'night-2' });
+      this.setState({
+        bgGradient: 'night-2'
+      });
     } else if (currentHour < 6) {
-      this.setState({ bgGradient: 'dawn' });
+      this.setState({
+        bgGradient: 'dawn'
+      });
     } else if (currentHour < 9) {
-      this.setState({ bgGradient: 'morning' });
+      this.setState({
+        bgGradient: 'morning'
+      });
     } else if (currentHour < 12) {
-      this.setState({ bgGradient: 'afternoon-1' });
+      this.setState({
+        bgGradient: 'afternoon-1'
+      });
     } else if (currentHour < 15) {
-      this.setState({ bgGradient: 'afternoon-2' });
+      this.setState({
+        bgGradient: 'afternoon-2'
+      });
     } else if (currentHour < 18) {
-      this.setState({ bgGradient: 'evening-1' });
+      this.setState({
+        bgGradient: 'evening-1'
+      });
     } else if (currentHour < 21) {
-      this.setState({ bgGradient: 'evening-2' });
+      this.setState({
+        bgGradient: 'evening-2'
+      });
     } else if (currentHour < 24) {
-      this.setState({ bgGradient: 'night-1' });
+      this.setState({
+        bgGradient: 'night-1'
+      });
     }
   }
   updateCurrentTime() {
-    const { timeZone, currentTime } = this.props;
-    this.setState({ localTime: currentTime.tz(timeZone).format('dddd HH:mm') });
+    const {
+      timeZone,
+      currentTime
+    } = this.props;
+    this.setState({
+      localTime: currentTime.tz(timeZone).format('dddd HH:mm')
+    });
     this.setGradient(this.state.currentHour);
   }
   componentDidMount() {
-    const { weatherId } = this.props;
+    const {
+      weatherId
+    } = this.props;
     this.getWeatherInfo(weatherId);
     window.setInterval(() => this.updateCurrentTime(), 5000);
     this.setGradient(this.state.currentHour);
   }
   toggleOpen() {
     const currentState = this.state.open;
-    this.setState({ open: !currentState });
+    this.setState({
+      open: !currentState
+    });
   }
   render() {
-    const { name, bgImg } = this.props;
-    const { localTime } = this.state;
-    const { desc, temp, icon } = this.state.weatherData;
+    const {
+      name,
+      bgImg
+    } = this.props;
+    const {
+      localTime
+    } = this.state;
+    const {
+      desc,
+      temp,
+      icon
+    } = this.state.weatherData;
     const activeClass = this.state.open ? 'open' : '';
     const gradientClass = this.state.bgGradient;
-    return /*#__PURE__*/(
-      React.createElement("div", { className: `panel ${activeClass} ${gradientClass}`,
-        onClick: this.toggleOpen }, /*#__PURE__*/
+    return /*#__PURE__*/ (
+      React.createElement("div", {
+          className: `panel ${activeClass} ${gradientClass}`,
+          onClick: this.toggleOpen
+        }, /*#__PURE__*/
 
-      React.createElement("div", null, /*#__PURE__*/
-      React.createElement("h2", null, name), /*#__PURE__*/
-      React.createElement("p", null, localTime)), /*#__PURE__*/
+        React.createElement("div", null, /*#__PURE__*/
+          React.createElement("h2", null, name), /*#__PURE__*/
+          React.createElement("p", null, localTime)), /*#__PURE__*/
 
-      React.createElement("div", { className: "weather-icon" }, /*#__PURE__*/
-      React.createElement("i", { className: icon }),
-      temp ? /*#__PURE__*/
-      React.createElement("span", null, " ", desc, " ", temp, "\xB0C ") :
-      '')));
+        React.createElement("div", {
+            className: "weather-icon"
+          }, /*#__PURE__*/
+          React.createElement("i", {
+            className: icon
+          }),
+          temp ? /*#__PURE__*/
+          React.createElement("span", null, " ", desc, " ", temp, "\xB0C ") :
+          '')));
 
 
 
 
-  }}
+  }
+}
 
 
-ReactDOM.render( /*#__PURE__*/React.createElement(WeatherApp, null), document.querySelector('#app'));
+ReactDOM.render( /*#__PURE__*/ React.createElement(WeatherApp, null), document.querySelector('#app'));
