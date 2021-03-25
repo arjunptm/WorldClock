@@ -6,22 +6,22 @@ class WeatherApp extends React.Component {
       cities: {
         'Raleigh': {
           weatherId: 4487042,
-          timeZone: 'America/New_York'
+          timeZone: 'Antartica/Palmer' //Using a timezone one hour ahead to compensate daylight saving. Change in 6 months if still using.
         },
 
         'Bangalore': {
           weatherId: 1277333,
-          timeZone: 'India/Delhi'
+          timeZone: 'Asia/Kolkata'
         },
 
-        'Paris': {
-          weatherId: 2988507,
-          timeZone: 'Europe/Paris'
+        'Seoul': {
+          weatherId: 1835848,
+          timeZone: 'Asia/Seoul'
         },
 
-        'Sydney': {
-          weatherId: 2147714,
-          timeZone: 'Australia/Sydney'
+        'Santa Clara': {
+          weatherId: 5393015,
+          timeZone: 'America/Denver' //Using a timezone one hour ahead to compensate daylight saving. Change in 6 months if still using.
         }
       }
     };
