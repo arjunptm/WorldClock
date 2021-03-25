@@ -76,13 +76,11 @@ class City extends React.Component {
   async getWeatherInfo(id) {
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&appid=c5baa00af2bfbc51b5a8bff68a069bb0`).then(res => res.json());
     const weatherInfo = {
-      temp: res.main.temp,
+      temp: res.timeZone,
       desc: res.weather[0].main,
       icon: `icon-${res.weather[0].icon}`,
       timeZ: res.timeZone
     };
-    
-    console.log(timeZ);
     this.setState({
       weatherData: weatherInfo
     });
