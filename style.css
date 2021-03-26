@@ -74,7 +74,7 @@ p {
 
 .morning {
   background: linear-gradient(#8dcdba1F, #eee07a1F, #f0eebc1F);
-  color: #363c80;
+  color: #fff;
 }
 
 .afternoon-1 {
@@ -94,7 +94,7 @@ p {
 
 .evening-2 {
   background: linear-gradient(#291c6b1F, #4a257d1F, #8841861F);
-  color: #9eaf81;
+  color: #fff;
 }
 
 .night-1 {
