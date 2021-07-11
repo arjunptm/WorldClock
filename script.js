@@ -4,9 +4,14 @@ class WeatherApp extends React.Component {
     this.state = {
       currentTime: moment(),
       cities: {
+        'Morrisville': {
+          weatherId: 4480285,
+          timeZone: 'Antartica/Palmer' //Using a timezone one hour ahead to compensate daylight saving. Change in 6 months if still using.
+        },
+
         'Raleigh': {
           weatherId: 4487042,
-          timeZone: 'Antartica/Palmer' //Using a timezone one hour ahead to compensate daylight saving. Change in 6 months if still using.
+          timeZone: 'America/Palmer' //Using a timezone one hour ahead to compensate daylight saving. Change in 6 months if still using.
         },
 
         'Santa Clara': {
@@ -17,11 +22,6 @@ class WeatherApp extends React.Component {
         'Bangalore': {
           weatherId: 1277333,
           timeZone: 'Asia/Kolkata'
-        },
-
-        'Seoul': {
-          weatherId: 1835848,
-          timeZone: 'Asia/Seoul'
         }
 
       }
